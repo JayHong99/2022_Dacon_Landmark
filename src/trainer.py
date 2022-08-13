@@ -97,11 +97,11 @@ class Trainer :
         self.calculate_scores()
         print(f'{phase} LOSS : [{str(round(self.epoch_loss, 5)).ljust(7, "0")}]    ACC : [{str(round(self.epoch_acc, 5)).ljust(7, "0")}]')
         if phase == 'valid' : 
-            if self.best_val_acc > self.epoch_acc : 
+            if self.best_val_loss < self.epoch_loss : 
                 self.early_stop += 1
                 print(f'EARLY STOP : {self.early_stop}')
             else : 
-                self.best_val_acc = self.epoch_acc
+                self.best_val_loss = self.epoch_loss
                 self.early_stop = 0
                 torch.save(self.model.state_dict(), self.early_stop_path)
 
@@ -110,7 +110,7 @@ class Trainer :
         """
         Train Model
         """
-        self.best_val_acc = 0
+        self.best_val_loss = 0
         for num_epoch in range(num_epochs) : 
             print(f'\nEPOCH : {num_epoch}')
             self.process('train')
