@@ -1,6 +1,33 @@
 ## DACON Landmark Classification Task
 https://dacon.io/competitions/official/235957/overview/description
 
+## Setting Environment
+
+Linux => Install poetry && pyenv for Setting Python Environment
+```
+ git clone https://github.com/pyenv/pyenv.git ~/.pyenv
+ sed -Ei -e '/^([^#]|$)/ {a \
+export PYENV_ROOT="$HOME/.pyenv"
+a \
+export PATH="$PYENV_ROOT/bin:$PATH"
+a \
+' -e ':a' -e '$!{n;ba};}' ~/.bash_profile
+echo 'eval "$(pyenv init --path)"' >> ~/.bash_profile
+
+echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.profile
+echo 'export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.profile
+echo 'eval "$(pyenv init --path)"' >> ~/.profile
+
+echo 'eval "$(pyenv init -)"' >> ~/.bashrc
+
+poetry install
+poetry shell
+
+source .venv/bin/activate
+ ```
+
+
+
 ## Description
 
 - Model : ResNet50

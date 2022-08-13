@@ -11,7 +11,7 @@ train_ratio : 0.8
 batch_size  : 256
 learning_rate : 0.1
 lr_milestones : [5, 10, 20]
-earlystop_criterion : 1
+earlystop_criterion : 30
 gamma : 0.1
 device : 'cuda:0'
 
