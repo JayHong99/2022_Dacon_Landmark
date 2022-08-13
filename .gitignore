@@ -1,0 +1,6 @@
+.venv
+.ipynb_checkpoints
+data
+result
+submission
+**/__pycache__

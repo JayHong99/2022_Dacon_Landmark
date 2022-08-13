@@ -1,0 +1,25 @@
+# Settings for paths
+data_root_path : data
+model_save_path : result
+submission_path : submission
+
+
+# Settings for training
+train_image_dir_name : train
+train_label_csv_name : train
+train_ratio : 0.8
+batch_size  : 256
+learning_rate : 0.1
+lr_milestones : [5, 10, 20]
+earlystop_criterion : 1
+gamma : 0.1
+device : 'cuda:0'
+
+# Settings for Evaluation
+test_image_dir_name : test
+test_label_csv_name : sample_submission
+
+# Others
+random_seed : 42
+
+# Settings for Inference
